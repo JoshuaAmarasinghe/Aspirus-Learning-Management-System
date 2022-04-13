@@ -1,0 +1,71 @@
+a{
+    text-decoration: none;
+  }
+  a:hover { 
+    text-decoration:none; 
+  }
+  
+  Link{
+    text-decoration: none;
+  }
+  Link:hover { 
+    text-decoration:none; 
+  }
+  
+  .card-form {
+    margin-bottom: 20px;
+    border: none;
+  }
+  
+  .form-submit-btn{background-image: linear-gradient(to right, #0092FA 0%, #12C4FA  51%, #0092FA  100%)}
+  .form-submit-btn {
+      border: 0;
+      margin: 20px auto;
+      padding: 15px 45px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;            
+      border-radius: 100px;
+      display: block;
+  }
+  
+  .form-submit-btn:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+  }
+  
+  body{
+    background-color: #F6F7FB;
+    color: #474D58;
+  }
+  
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .container{
+    min-height: 53vh;
+  }
+  
+  .search Input[type="text"]{
+      border: 0;
+      background: none;
+      display: block;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 10px 20px;
+      width: 400px;
+      outline: none;
+      color: black;
+      border-radius: 24px;
+      transition: 0.25s;
+      text-align:left; 
+  }
+  
+  .search input[type="text"]:focus{
+      width: 500px;
+      border-color: #2ecc71
+  }
