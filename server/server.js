@@ -27,6 +27,9 @@ connection.once("open", function () {
 
 //when http://localhost:8070/staff run it will execute staffrouter.js file
 app.use("/staff", StaffRouter);
+// Apoinment manager routes 
+app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
+
 
 //defining a port to run the application
 //use port 8070 or use any other port if the 8070 is unavailable 
@@ -42,3 +45,5 @@ process.on("unhandledRejection", (error, promise) => {
   console.log(`Logged error: ${error}`);
   server.close(() => process.exit(1));
 })
+
+
