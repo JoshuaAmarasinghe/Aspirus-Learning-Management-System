@@ -1,0 +1,16 @@
+nav {
+    text-transform: uppercase;
+  }
+  
+  header{
+    margin-bottom: 100px;
+  }
+  
+  .header-title{
+    letter-spacing: 3px;
+  }
+  
+  .header-bg{
+    background-color: rgba(246, 247, 251,0.7);
+    backdrop-filter: blur(20px);
+  }
