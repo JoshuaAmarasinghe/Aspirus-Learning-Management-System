@@ -12,6 +12,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors());
 
 const StaffRouter = require("./routes/staffrouter");
+const studentRouter= require("./routes/students.js");
 
 //getting the database url
 const URL = process.env.MONGODB_URL;
@@ -29,7 +30,8 @@ connection.once("open", function () {
 app.use("/staff", StaffRouter);
 // Apoinment manager routes 
 app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
-
+//Student Managment Routes
+app.use("/student", studentRouter);
 
 //defining a port to run the application
 //use port 8070 or use any other port if the 8070 is unavailable 
