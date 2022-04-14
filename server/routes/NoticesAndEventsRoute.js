@@ -2,7 +2,7 @@ const router = require("express").Router();
 const NoticesAndEvents = require("../models/NoticesandEventsModel");
 
 //Add new notice or event
-router.post('/add',async(req,res)=>{
+router.post('/',async(req,res)=>{
     try{
         const {date,time,venue,to,createdby,category,topic,content} = req.body;
        
