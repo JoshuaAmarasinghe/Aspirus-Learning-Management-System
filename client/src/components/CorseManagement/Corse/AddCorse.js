@@ -1,22 +1,14 @@
-import React, { useState,useEffect } from 'react';
-import { useNavigate, useLocation} from 'react-router-dom';
+import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Button from "@material-ui/core/Button";
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import OutlinedInput from "@material-ui/core/OutlinedInput";
 import axios from 'axios';
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import UpdateIcon from '@material-ui/icons/Update';
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { green,blue} from '@material-ui/core/colors';
 import './Corse.css';
-
-
-
-
-
-
-
-
-
 
 
 export default function AddCorse(){
