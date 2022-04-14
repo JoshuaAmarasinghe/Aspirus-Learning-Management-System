@@ -5,6 +5,8 @@ import Homepage from './components/Home/Homepage';
 import StaffSignUp from './components/StaffManagement/SignUp/SignUp';
 import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
+import Profile from './components/CorseManagement/Corse/AddCorse';
+import AddCorse from './components/CorseManagement/Corse/AddCorse';
 
 function App() {
   return (
@@ -18,6 +20,13 @@ function App() {
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/profile" element={<Profile/>} />
         </Routes>
+        
+        /*import sundar's part corse management system */
+        <Routes>
+              <Route path="/add" exact component={AddCorse}/>
+        </Routes>
+        
+
       </div>
     </Router>
   );
