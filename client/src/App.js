@@ -5,7 +5,6 @@ import Homepage from './components/Home/Homepage';
 import StaffSignUp from './components/StaffManagement/SignUp/SignUp';
 import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
-import Profile from './components/CorseManagement/Corse/AddCorse';
 import AddCorse from './components/CorseManagement/Corse/AddCorse';
 
 function App() {
@@ -23,7 +22,8 @@ function App() {
         
         
         <Routes>
-              <Route path="/add" exact component={AddCorse}/>
+              <Route exact path="/corse/add" element={<AddCorse/>} />
+             
         </Routes>
         
 
