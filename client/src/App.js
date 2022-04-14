@@ -21,7 +21,7 @@ function App() {
               <Route exact path="/staff/profile" element={<Profile/>} />
         </Routes>
         
-        /*import sundar's part corse management system */
+        
         <Routes>
               <Route path="/add" exact component={AddCorse}/>
         </Routes>
