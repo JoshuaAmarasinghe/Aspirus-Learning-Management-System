@@ -77,9 +77,9 @@ export default function AddCourse(){
                 </div>
                 <br></br>
                 <div className="form-group">
-                    <div>
+                <div>
                                 
-                    </div>
+                </div>
                 </div>
                 <br></br>
                 <div className="row">
