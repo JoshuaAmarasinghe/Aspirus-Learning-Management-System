@@ -45,7 +45,8 @@ function Header() {
         },
         {
           title: 'Events',
-          path: `/events/${user._id}`,
+          path: `/noticeandeventManager`,
+          //path: `/events/${user._id}`,
           icon: <EventAvailableIcon/>,
           cName: 'nav-text'
         },
