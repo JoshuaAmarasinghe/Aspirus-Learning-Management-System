@@ -86,7 +86,7 @@ export default function ViewNoticesAndEventsDetails() {
                                     <td>{NoticeAndEvent.time}</td>
                                     <td>{NoticeAndEvent.category}</td>
                                     <td>{NoticeAndEvent.topic}</td>   
-                                    <td><Link to={"/noticeandeventManager/view/" + NoticeAndEvent._id} className="Edit"> <i className="far fa-edit" ></i> </Link></td>
+                                    <td><Link to={"/noticeandeventManager/view/" + NoticeAndEvent._id} className="Edit"> <i className="far fa-edit" >Click Here To Edit</i> </Link></td>
                                 </tr>
 
                             })}
