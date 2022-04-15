@@ -2,27 +2,23 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const corseSchema = new Schema({
+const courseSchema = new Schema({
     
     name : {
         type : String,
         required: true
     },
-    disctription :{
-        type : String,
-        required: true
-    },
-    image : {
+    description :{
         type : String,
         required: true
     }
-
+    
 
 })
 
-const Corse = mongoose.model("Corse", corseSchema);
+const Course = mongoose.model("Course", courseSchema);
 
-module.exports = Corse;
+module.exports = Course;
 
 
 

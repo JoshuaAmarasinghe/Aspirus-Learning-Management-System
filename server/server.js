@@ -32,6 +32,9 @@ app.use("/staff", StaffRouter);
 app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
 //Student Managment Routes
 app.use("/student", studentRouter);
+//use courses.js file created in routes folder pass data frontend to backend
+app.use("/course", require("./routes/courses"));
+app.use("/content", require("./routes/contents"));
 
 //defining a port to run the application
 //use port 8070 or use any other port if the 8070 is unavailable 

@@ -8,3 +8,11 @@
 }
 
 
+.previewImg {
+    border-radius: 15px !important;
+    vertical-align: middle;
+    border-style: none;
+    position: relative;
+    max-width: 250px;
+    margin-bottom: 20px;
+}

@@ -5,7 +5,9 @@ import Homepage from './components/Home/Homepage';
 import StaffSignUp from './components/StaffManagement/SignUp/SignUp';
 import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
-import AddCorse from './components/CorseManagement/Corse/AddCorse';
+import AddCourse from './components/CorseManagement/Course/AddCourse';
+import AllCourse from './components/CorseManagement/Course/AllCourse';
+
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
         
         
         <Routes>
-              <Route exact path="/corse/add" element={<AddCorse/>} />
+              <Route exact path="/course/add" element={<AddCourse/>} />
+              <Route exact path="/course/allcourse" element={<AllCourse/>} />
              
         </Routes>
         
