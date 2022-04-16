@@ -7,7 +7,7 @@ function Homepage() {
 
     return (
         <div className="container">
-            <Slider/>
+            {/* <Slider/> */}
             <About/>
             <Services/>
         </div>
