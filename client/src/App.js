@@ -12,7 +12,6 @@ import ViewOneNoticeOrEvent from './components/noticeandevent-manager/ViewOneNot
 import AddNoticeOrEvent from './components/noticeandevent-manager/AddNoticeOrEvent';
 import NoticeOrEventNAV from './Routes/NoticeAndEventRoutes';
 
-
 function App() {
   return (
     <Router>
