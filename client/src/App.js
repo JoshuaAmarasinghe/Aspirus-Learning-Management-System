@@ -17,6 +17,14 @@ function App() {
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/profile" element={<Profile/>} />
+
+               
+               {/* Students Manager Routes */}
+      <Route path = "/student">< StudentNAV/></Route>
+      <Route exact path = "/student/add"><AddStudent/></Route>
+      <Route exact path = "/student/view"><ViewStudentDetails/></Route>
+      <Route exact path = "/student/view/:id">< ViewOneStudent/></Route>
+
         </Routes>
       </div>
     </Router>
