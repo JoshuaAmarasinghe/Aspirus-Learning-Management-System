@@ -31,7 +31,7 @@ app.use("/staff", StaffRouter);
 // Apoinment manager routes 
 app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
 //Student Managment Routes
-app.use("/student", studentRouter);
+app.use("/student",require("./routes/students"));
 
 //defining a port to run the application
 //use port 8070 or use any other port if the 8070 is unavailable 
