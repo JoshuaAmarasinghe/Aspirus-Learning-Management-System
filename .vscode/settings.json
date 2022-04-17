@@ -10,5 +10,6 @@
     "staffrouter",
     "staffsignin",
     "staffsignup"
-  ]
+  ],
+  "npm-scripts.showStartNotification": false
 }

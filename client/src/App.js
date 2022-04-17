@@ -7,7 +7,9 @@ import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
 import AddCourse from './components/CorseManagement/Course/AddCourse';
 import AllCourse from './components/CorseManagement/Course/AllCourse';
-
+import AddContent from './components/CorseManagement/Content/AddContent';
+import ViewOneCourse from './components/CorseManagement/Course/viewOneCourse';
+import ViewOneContent from './components/CorseManagement/Content/viewOneContent';
 
 function App() {
   return (
@@ -20,14 +22,17 @@ function App() {
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/profile" element={<Profile/>} />
-        </Routes>
-        
-        
-        <Routes>
+
+              {/*course routes */}
               <Route exact path="/course/add" element={<AddCourse/>} />
-              <Route exact path="/course/allcourse" element={<AllCourse/>} />
-             
+              <Route exact path="/content/add" element={<AddContent/>} />
+              <Route exact path="/course/view" element={<AllCourse/>} />
+              <Route exact path="/course/view/:id" element={<ViewOneCourse/>} />
+              <Route exact path="/content/view/:id" element={<ViewOneContent/>} />
         </Routes>
+        
+        
+       
         
 
       </div>
