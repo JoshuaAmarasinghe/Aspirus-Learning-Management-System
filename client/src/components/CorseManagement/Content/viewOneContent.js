@@ -30,7 +30,7 @@ export default function ViewOneContent() {
         async function getDetails() {
             try {
                 const result = await (await axios.get(`http://localhost:8070/content/${id}`)).data.data
-                setTitle(result[0].name);
+                setTitle(result[0].title);
                 setdescription(result[0].description)
                 
 
@@ -54,7 +54,7 @@ export default function ViewOneContent() {
             const newDetails = {
                 title,description
             }
-            const data = await (await axios.put(`http://localhost:8070/course/${id}`, newDetails)).status
+            const data = await (await axios.put(`http://localhost:8070/content/${id}`, newDetails)).status
             if (data === 200) {
                 SoloAlert.alert({
                     title: "Welcome!",
@@ -63,7 +63,7 @@ export default function ViewOneContent() {
                     theme: "dark",
                     useTransparency: true,
                     onOk: function () {
-                        window.location = "/course/view"
+                        window.location = "/content/view"
                     },
                 });
             } else {
@@ -123,7 +123,7 @@ export default function ViewOneContent() {
                             theme: "dark",
                             useTransparency: true,
                             onOk: function () {
-                                window.location = "/course/view"
+                                window.location = "/content/view"
                             },
 
                         });

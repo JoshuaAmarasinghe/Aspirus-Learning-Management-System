@@ -3,9 +3,11 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import jspdf from 'jspdf';
 import "jspdf-autotable";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 import './Course.css';
 //import Course from '../../../../../server/models/course';
+
 
 
 export default function AllCourse(){
@@ -106,14 +108,18 @@ export default function AllCourse(){
                         </form>
                     </div>
                 </nav><hr />
+                
 
-                <div className="bodyContent">
-                    <table className="table table-dark table-sm" >
+                <div className="boxSignUp" align="center">
+                    <table className="table table-light" >
                         <thead>
                             <tr >
-                                <th scope="col">click hear to edit</th>
+                                
                                 <th scope="col">name</th>
                                 <th scope="col">description</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                
                                    
                             </tr>
                         </thead>
@@ -121,15 +127,27 @@ export default function AllCourse(){
 
                             {filtered.slice(0).reverse().map((corse) => {
                                 return <tr >
-                                    <td><Link to={"/course/view/" + corse._id} className="Edit"> <i className="far fa-edit" >edit</i> </Link></td>
+                                    
+                                    
                                     <td>{corse.name}</td>
-                                    <td>{corse.description}</td>  
+                                    <td>{corse.description}</td> 
+                                    <td><Link to={"/course/view/" + corse._id} className="Edit"> <i class="bi bi-gear-fill" fontSize="large"></i> </Link></td> 
+                                    <td><Link to={"/course/view/" + corse._id} className="Edit"> <i class="bi bi-arrow-right-circle-fill" fontSize="large"></i> </Link></td> 
                                     
                                 </tr>
 
                             })}
                         </tbody>
                     </table>
+                    <br></br>
+                    <div className="row">
+                                    
+                        <div className="form-group">
+                            <Link to={"/course/add"} className="add"> <input className="form-submit-btn" type="submit" value="Add" /> </Link>
+                            
+                        </div>
+                                
+                    </div>
 
                 </div>
 
@@ -138,35 +156,7 @@ export default function AllCourse(){
     )
 }
 
-    /*return(
-
-        <div className="container" align="center">
-           <div className="row">
-                    <div className="col-1">
-                    </div>
-                    <div className="col-11">
-                        <div className="pb-2 px-5 d-flex align-items-center justify-content-between">
-                            <h2>Courses</h2>
-                        </div>
-                    </div>
-            </div>  
-            <form className="boxSignUp">
-                <div className="col-xl-4">
-                    <h4>{courses.name}</h4>
-                    <h5>{courses.description}</h5>
-                    <h1>hello</h1>
-                   
-                    
-                </div>
-            
-            
-            </form>        
-
-        </div>
- 
-    )
-
-}*/
+    
 
 
 

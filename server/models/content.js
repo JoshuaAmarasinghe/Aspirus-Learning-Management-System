@@ -8,7 +8,7 @@ const contentSchema = new Schema({
         type : String,
         required: true
     },
-    disctription :{
+    description :{
         type : String,
         required: true
     }

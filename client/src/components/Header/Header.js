@@ -40,7 +40,7 @@ function Header() {
         },
         {
             title: 'Courses',
-            path: `/courses/${user._id}`,
+            path: `/course/view`,
             icon: <AssignmentIcon/>,
             cName: 'nav-text'
         },
