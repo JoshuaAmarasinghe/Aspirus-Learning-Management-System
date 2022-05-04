@@ -53,7 +53,7 @@ function AllStaffs() {
   function handleSearch(event){
     const searchTerm = event.currentTarget.value
     axios.post(`http://localhost:8070/staff`).then((res) => {
-      filterContent(res.data, searchTerm.toLowerCase())
+      filterContent(res.data.result, searchTerm.toLowerCase())
     }).catch((error) => {
       alert("Failed to search staff members")
       console.log(error)
