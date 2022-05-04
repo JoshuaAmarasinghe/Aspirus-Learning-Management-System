@@ -35,6 +35,7 @@ app.use("/student", studentRouter);
 //use corses.js file created in routes folder pass data frontend to backend
 app.use("/corse", require("./routes/corses"));
 app.use("/content", require("./routes/contents"));
+app.use("/student",require("./routes/students"));
 
 //defining a port to run the application
 //use port 8070 or use any other port if the 8070 is unavailable 
