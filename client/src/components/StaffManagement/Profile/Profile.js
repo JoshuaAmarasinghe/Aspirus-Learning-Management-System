@@ -45,7 +45,7 @@ function Profile() {
     
     const logout = () => {
         localStorage.clear();
-        navigate(`/`)
+        navigate(`/staff`)
     };
         
      const update =() =>{
@@ -109,10 +109,13 @@ function Profile() {
                             </div>
                         </div>
                         <div className="row mt-5">
-                            <div className="col-12">
-                            -- Enrolled Course--
+                            <h4>Enrolled Course</h4>
+                            <hr></hr>
+                            <div className="col-xl-4">
+                                <h6>N/A</h6>
                             </div>
-                         </div>
+                        </div>
+
                     </div>   
                 </div>
                 <div className="col-xl-3 px-5" align="center">                   
