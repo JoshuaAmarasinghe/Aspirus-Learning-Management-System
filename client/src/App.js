@@ -32,11 +32,6 @@ function App() {
               <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
               <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
               <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
-               {/* Students Manager Routes */}
-              <Route path = "/student">< StudentNAV/></Route>
-              <Route exact path = "/student/add"><AddStudent/></Route>
-              <Route exact path = "/student/view"><ViewStudentDetails/></Route>
-              <Route exact path = "/student/view/:id">< ViewOneStudent/></Route>
         </Routes>
        </div>
     </Router>
