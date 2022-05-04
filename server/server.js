@@ -31,6 +31,10 @@ app.use("/staff", StaffRouter);
 // Apoinment manager routes 
 app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
 //Student Managment Routes
+app.use("/student", studentRouter);
+//use corses.js file created in routes folder pass data frontend to backend
+app.use("/corse", require("./routes/corses"));
+app.use("/content", require("./routes/contents"));
 app.use("/student",require("./routes/students"));
 
 //defining a port to run the application

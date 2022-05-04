@@ -5,6 +5,12 @@ import Homepage from './components/Home/Homepage';
 import StaffSignUp from './components/StaffManagement/SignUp/SignUp';
 import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
+import UpdateProfile from './components/StaffManagement/UpdateProfile/UpdateProfile';
+import AllStaffs from './components/StaffManagement/AllStaffs/AllStaffs';
+import ViewNoticesAndEventsDetails from './components/noticeandevent-manager/ViewAllNoticesAndEvents';
+import ViewOneNoticeOrEvent from './components/noticeandevent-manager/ViewOneNoticeOrEvent';
+import AddNoticeOrEvent from './components/noticeandevent-manager/AddNoticeOrEvent';
+import NoticeOrEventNAV from './Routes/NoticeAndEventRoutes';
 
 function App() {
   return (
@@ -17,16 +23,22 @@ function App() {
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/profile" element={<Profile/>} />
-
-               
+              <Route exact path="/staff/update/:id" element={<UpdateProfile/>} />
+              <Route exact path="/staff" element={<AllStaffs/>} />
+              <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
+              <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
+              <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
+              <Route exact path = "/noticeandeventManager" element={<NoticeOrEventNAV/>}/>
+              <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
+              <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
+              <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
                {/* Students Manager Routes */}
-      <Route path = "/student">< StudentNAV/></Route>
-      <Route exact path = "/student/add"><AddStudent/></Route>
-      <Route exact path = "/student/view"><ViewStudentDetails/></Route>
-      <Route exact path = "/student/view/:id">< ViewOneStudent/></Route>
-
+              <Route path = "/student">< StudentNAV/></Route>
+              <Route exact path = "/student/add"><AddStudent/></Route>
+              <Route exact path = "/student/view"><ViewStudentDetails/></Route>
+              <Route exact path = "/student/view/:id">< ViewOneStudent/></Route>
         </Routes>
-      </div>
+       </div>
     </Router>
   );
 }

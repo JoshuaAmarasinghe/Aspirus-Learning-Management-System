@@ -74,10 +74,10 @@ exports.loginStaff = async (req, res) => {
 exports.updateStaff = async (req, res) => {
 
   let staffID = req.params.id;
-  const { email, phoneno, address, qualification, imgUrl } = req.body;
+  const { email, phoneno, address, qualification, role, imgUrl } = req.body;
 
   //object with provided data
-  const updateStaff = { email, phoneno, address, qualification, imgUrl }
+  const updateStaff = { email, phoneno, address, qualification, role, imgUrl }
 
   try {
     //find staff by staffID and update the staff with provided data
