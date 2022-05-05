@@ -75,7 +75,7 @@ export default function AddNoticeOrEvent() {
     }
     return (
         <div className="content" >
-            <h3 style={{ marginTop:"100px"}}>ADD-APOINTMENT-DETAILS</h3><hr />
+            <h3 style={{ marginTop:"100px"}}>ADD-EVENTS AND NOTICES-DETAILS</h3><hr />
 
             
             <form class="row g-3 needs-validation" id="inputForm2" novalidate>
