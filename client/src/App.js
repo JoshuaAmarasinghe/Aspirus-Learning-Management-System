@@ -11,6 +11,9 @@ import ViewNoticesAndEventsDetails from './components/noticeandevent-manager/Vie
 import ViewOneNoticeOrEvent from './components/noticeandevent-manager/ViewOneNoticeOrEvent';
 import AddNoticeOrEvent from './components/noticeandevent-manager/AddNoticeOrEvent';
 import NoticeOrEventNAV from './Routes/NoticeAndEventRoutes';
+import StaffReport from './components/StaffManagement/Report/StaffReport';
+import Staff from './components/StaffManagement/AllStaffs/AllStaffs'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -18,7 +21,7 @@ function App() {
       <div className="App">
         <Header/>
         <Routes>
-              <Route exact path="/" element={<Homepage/>} />
+              <Route exact path="/" element={<Staff/>} />
               <Route exact path="/staff/signup" element={<StaffSignUp/>} />
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
@@ -32,7 +35,9 @@ function App() {
               <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
               <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
               <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
+              <Route exact path="/staff/report/:id" element={<StaffReport/>} />
         </Routes>
+        <Footer/>
        </div>
     </Router>
   );
