@@ -1,0 +1,12 @@
+.box-report {
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0px 24px 48px 0 rgba(0, 0, 0, 0.1);
+    padding: 45px;
+    min-height:1000px;
+    max-width:70%;
+    margin: 0 auto;
+    margin-top:40px;
+    margin-bottom:40px;
+}
