@@ -29,7 +29,6 @@ function Footer() {
                         <h3>Links</h3>
                         <ul className="list-group">
                             <li><Link to="/" style={{ color: '#FFF' }}>Home</Link></li>
-                            <li><Link to="/pharmacy/items"  style={{ color: '#FFF' }}>Pharmacy</Link></li>
                             <li><Link to=""  style={{ color: '#FFF' }}>About Us</Link></li>
                             <li><Link to=""  style={{ color: '#FFF' }}>Contacts</Link></li>
                             <li><Link to="/admin/signin"  style={{ color: '#FFF' }}>Admin</Link></li>
