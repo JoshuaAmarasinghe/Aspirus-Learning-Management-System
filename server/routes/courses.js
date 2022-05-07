@@ -4,13 +4,17 @@ let Course = require("../models/course");
 
 // add from hear http://Localhost:8070/course/add
 router.route("/add").post((req,res)=>{
+    const moduleId = req.body.moduleId;
     const name = req.body.name;
     const description = req.body.description;
+    const image = req.body.image;
    
 
     const newCourse = new Course({
+        moduleId,
         name,
-        description
+        description,
+        image
       
     })
 
@@ -81,11 +85,11 @@ router.get('/:id',async(req,res)=>{
 router.put("/:id", async(req,res)=>{
     try{
         let _id = req.params.id;
-        const {name, description} = req.body;
+        const {name, description, image} = req.body;
 
 
         const updatecourse = new Course({
-           _id,name, description
+           _id,name, description, image
         }); 
 
         await Course.findByIdAndUpdate(_id,updatecourse)
@@ -98,17 +102,6 @@ router.put("/:id", async(req,res)=>{
 
 
 //delete from hear
-
-/*router.route("/delete/:id").delete(async(req,res) =>{
-    let moduleCode = req.params.id;
-
-    await Course.findByIdAndDelete(moduleCode).then(()=>{
-        res.status(200).send({status: "course deleted"});
-    }).catch((err) =>{
-        console.log(err);
-        res.status(500).send({status: "error delete"});
-    })
-})*/
 //This route used to delete notice or event from table
 router.delete('/:id',async(req,res)=>{
 

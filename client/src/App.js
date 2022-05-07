@@ -29,7 +29,7 @@ function App() {
               <Route exact path="/course/add" element={<AddCourse/>} />
               <Route exact path="/content/add" element={<AddContent/>} />
               <Route exact path="/course/view" element={<AllCourse/>} />
-              <Route exact path="/content/view" element={<AllContent/>} />
+              <Route exact path="/content/view/:moduleId" element={<AllContent/>} />
               <Route exact path="/course/view/:id" element={<ViewOneCourse/>} />
               <Route exact path="/content/view/:id" element={<ViewOneContent/>} />
 

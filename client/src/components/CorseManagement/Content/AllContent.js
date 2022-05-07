@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import jspdf from 'jspdf';
 import "jspdf-autotable";
+import { useParams } from "react-router";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 
@@ -22,11 +23,17 @@ export default function AllContent(){
 
     const[contents, setContent] = useState([]);
 
+    const [title, setTitle] = useState("");
+    const [description, setdescription] = useState("");
+
+
+    const { moduleId } = useParams();
+
     //This useEffect function used to get all Notices and Events data
     useEffect(() => {
         async function getDetails() {
             try {
-                const result = await (await axios.get("http://localhost:8070/content/")).data.data
+                const result = await (await axios.get(`http://localhost:8070/content/${moduleId}`)).data.data
                 setContent(result);
                 setLoaderStatus(true)
                 setTableStatus(false)
@@ -36,7 +43,7 @@ export default function AllContent(){
         }
        
         getDetails();
-    })
+    }, [])
 
     //This function used to generate a pdf
     function generatePDF(tickets) {

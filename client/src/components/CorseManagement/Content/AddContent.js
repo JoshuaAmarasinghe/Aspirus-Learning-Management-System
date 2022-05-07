@@ -11,9 +11,11 @@ import './Content.css';
 
 
 export default function AddContent(){
+    const [moudleId,setModuleId] = useState("");
     const [title,setTitle] = useState("");
     const [description,setDescription] = useState("");
-   
+    
+    //const [file,setFile] = useState("");
 
     
 
@@ -25,15 +27,19 @@ export default function AddContent(){
     function sendData(e){
         e.preventDefault();
         const newContent ={
+            moudleId,
             title,
             description,
+            //file
             
         }
 
-        axios.post("http://localhost:8070/content/add",newContent).then(()=>{
-            alert("course added")
+        axios.post("http://Localhost:8070/content/add",newContent).then(()=>{
+            alert("content added")
+            setModuleId("");
             setTitle("");
             setDescription("");
+            //setFile("");
             
         }).catch((err)=>{
             alert(err)
@@ -53,6 +59,18 @@ export default function AddContent(){
                     </div>
                 </div>
             <form className="boxSignUp" onSubmit={sendData}>
+            <div className="col-md-6 mb-4">
+                    <div className="form-group">
+
+                        <label for="name">Module Code</label>
+                        <input type="text" className="form-control" id="name" 
+                        onChange={(e)=>{
+                            setModuleId(e.target.value);
+                        }}/>
+
+                    </div>
+
+                </div>
                 <div className="col-md-6 mb-4">
                     <div className="form-group">
 
@@ -69,7 +87,7 @@ export default function AddContent(){
                 <div className="form-group">
                     
                     <label for="description">description</label>
-                    <textarea type="text" className="form-control" id="description" placeholder="Breaf Description About Course" rows="4" cols="50"
+                    <textarea type="text" className="form-control" id="description" placeholder="Breaf Description About Content" rows="4" cols="50"
                     onChange={(e)=>{
                         setDescription(e.target.value);
                     }}/>
@@ -78,7 +96,10 @@ export default function AddContent(){
                 <br></br>
                 <div className="form-group">
                 <div>
-                                
+                    <input type="file" id="myFile" name="filename"
+                     onChange={(e)=>{
+                        //setFile(e.target.value);
+                    }}/>
                 </div>
                 </div>
                 <br></br>

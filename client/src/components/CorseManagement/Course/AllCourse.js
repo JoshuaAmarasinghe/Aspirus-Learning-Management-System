@@ -5,7 +5,11 @@ import jspdf from 'jspdf';
 import "jspdf-autotable";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+
+
 import './Course.css';
+import Course from './Course';
+
 //import Course from '../../../../../server/models/course';
 
 
@@ -97,6 +101,7 @@ export default function AllCourse(){
             </div>
             <button type="button" class="btn btn-outline-info" id="pdfButton" onClick={(e) => { generatePDF(courses) }}>
                 <i className="fa fa-file-pdf"></i>  PDF</button>
+            
 
             <div hidden={tebleStatus}>{/* This part used to get all users data into table */}
                 <nav className="navbar bg-white" >
@@ -110,44 +115,25 @@ export default function AllCourse(){
                 </nav><hr />
                 
 
-                <div className="boxSignUp" align="center">
-                    <table className="table table-light" >
-                        <thead>
-                            <tr >
-                                
-                                <th scope="col">name</th>
-                                <th scope="col">description</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                
-                                   
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            {filtered.slice(0).reverse().map((corse) => {
-                                return <tr >
-                                    
-                                    
-                                    <td>{corse.name}</td>
-                                    <td>{corse.description}</td> 
-                                    <td><Link to={"/course/view/" + corse._id} className="Edit"> <i class="bi bi-gear-fill" fontSize="large"></i> </Link></td> 
-                                    <td><Link to={"/course/view/" + corse._id} className="Edit"> <i class="bi bi-arrow-right-circle-fill" fontSize="large"></i> </Link></td> 
-                                    
-                                </tr>
-
-                            })}
-                        </tbody>
-                    </table>
-                    <br></br>
-                    <div className="row">
-                                    
-                        <div className="form-group">
+                <div>
+                
+                    {filtered.slice(0).reverse().map((course, index) => (
+                        
+                      
+                        <><Course name={course.name} description={course.description} image={course.image} id={course._id} moduleId={course.moduleId} /></>
+                        
+                    ))}
+                    <div className="form-group">
                             <Link to={"/course/add"} className="add"> <input className="form-submit-btn" type="submit" value="Add" /> </Link>
                             
-                        </div>
-                                
                     </div>
+                    
+                 
+                
+
+
+            
+                   
 
                 </div>
 
@@ -157,8 +143,6 @@ export default function AllCourse(){
 }
 
     
-
-
 
 
 

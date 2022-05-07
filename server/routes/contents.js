@@ -1,15 +1,18 @@
 const router = require("express").Router();
-const Content = require("../models/content");
-let Course = require("../models/content");
+let Content = require("../models/content");
+
 
 
 // add from hear http://Localhost:8070/course/add
 router.route("/add").post((req,res)=>{
+    const moduleId = req.body.moduleId;
     const title = req.body.title;
     const description = req.body.description;
+    
    
 
     const newContent = new Content({
+        moduleId,
         title,
         description
       
@@ -28,9 +31,10 @@ router.route("/add").post((req,res)=>{
 
 //detailsv   http://Localhost:8070/corse
 
-router.get('/', async(req,res)=>{
+router.get('/:moduleId', async(req,res)=>{
     try{
-        const allContent = await Content.find();
+        let moduleId = req.params.moduleId;
+        const allContent = await Content.find({moduleId:moduleId});
         res.status(200).send({data : allContent});
     }catch(err){
         res.status(500).send({data : err});
@@ -60,11 +64,11 @@ router.put("/:id", async(req,res)=>{
         const {title, description} = req.body;
 
 
-        const updatecontent = new Course({
+        const updatecontent = new Content({
            _id,title, description
         }); 
 
-        await Course.findByIdAndUpdate(_id,updatecontent)
+        await Content.findByIdAndUpdate(_id,updatecontent)
         res.status(200).send({data : updatecontent});
              
     }catch(err){
@@ -81,7 +85,7 @@ router.delete('/:id',async(req,res)=>{
 
     try{
         const id = req.params.id;
-        const removedcontent = await Course.findByIdAndDelete(id)
+        const removedcontent = await Content.findByIdAndDelete(id)
         res.status(200).send({status: "content deleted"});
         //res.status(200).send({data : removedcourse});
     
