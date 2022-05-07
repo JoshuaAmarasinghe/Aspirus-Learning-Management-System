@@ -47,87 +47,31 @@ function StaffReport() {
                     </table>
                     <hr/>
                     <div className="prescription px-4">
+                    <h5 align="center">User Details</h5>
+                    <br></br>
                         <table style={{ width: '100%' }}>
                             <tbody>
                             <tr>
-                                <td>
+                                <td align="left">
                                     <p> Name : {staff.title} {staff.name} </p>
                                     <p> Gender : {staff.gender}</p>
                                     <p> Age : {staff.age} </p>
-                                </td>
-                                <td align="right">
-                                    <p> {staff.email} </p>
+                                    <p> Address : {staff.address} </p>
+                                    <p> NIC : {staff.nic} </p>
+                                    <p> User Role : {staff.role} </p>
+                                    <p> {staff.email}</p>
                                     <p> {staff.qualification} </p>
-                                    <p> {staff.address} </p>
+                                    <p> {staff.phoneno} </p>
                                 </td>
+
                             </tr>
                             </tbody>
                         </table>
-                        <hr></hr>
-                        <table className="my-4 mx-5">
-                            <tbody>
-                                <tr>
-                                    <td><h5>xxx</h5></td>
-                                    <td>
-                                        <h5></h5>
-                                    </td>
-                                    <td><h5>&nbsp;</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>xxx</h5></td>
-                                    <td>
-                                        <div>
-                                            
-                                        </div>
-                                    </td>
-                                    <td><h5>&nbsp;</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5></h5></td>
-                                    <td>
-                                        <div className="mb-2">
-                                       
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h5>&nbsp;</h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><h5>xxxx</h5></td>
-                                    <td>
-                                        <div className="mb-2">
-                                           
-                                        </div>
-                                    </td>
-                                    <td><h5>&nbsp;</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>xxxx</h5></td>
-                                    <td>
-                                        <div className="mb-2">
-                                           
-                                        </div>
-                                    </td>
-                                    <td><h5>&nbsp;</h5></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>xxxxx</h5></td>
-                                    <td><h5>{staff.name}</h5></td>
-                                    <td>
-                                       
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <hr></hr>
-
-                        <h4>Recent Courses </h4>
-                        <br/>
+                        <br></br>
+                        <h5>Recent Courses </h5>
                         <div className="blue-table">
-                            <div className="blue-table, box-view-prescription">
-                                
+                            <div>
+                                <p>N/A</p>
                             </div>
                         </div>
                     </div>
