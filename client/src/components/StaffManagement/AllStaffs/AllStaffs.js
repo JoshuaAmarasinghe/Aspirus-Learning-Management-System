@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import { useLocation } from 'react-router';
+import { useLocation } from 'react-router-dom';
 import './AllStaffs.css'
 import axios from 'axios'
 import Carousel from 'react-multi-carousel';

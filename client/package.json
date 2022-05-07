@@ -23,9 +23,10 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-simple-image-slider": "^2.4.1",
+    "react-to-print": "^2.14.7",
+    "soloalert": "^1.1.10",
     "styled-components": "^5.3.5",
     "swiper": "^8.1.0",
-    "soloalert": "^1.1.10",
     "validator": "^13.7.0",
     "web-vitals": "^2.1.4"
   },
