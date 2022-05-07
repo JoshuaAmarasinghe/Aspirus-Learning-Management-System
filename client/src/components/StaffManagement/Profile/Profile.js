@@ -27,25 +27,25 @@ function Profile() {
      
     },[staff._id,location])
 
-        async function deleteStaff(id){
-            const config={
-                headers:{
-                    "content-Type":"application/json"
-                }
+    async function deleteStaff(id){
+        const config={
+            headers:{
+                "content-Type":"application/json"
             }
-
-            await axios.delete(`http://localhost:8070/staff/delete/${id}`,config).then(() =>{
-                alert("Your Profile has been Deleted")
-                localStorage.clear()
-                navigate('/staff/signin')
-            }).catch((error)=>{
-                alert("Remove Failed!");
-            })
         }
+
+        await axios.delete(`http://localhost:8070/staff/delete/${id}`,config).then(() =>{
+            alert("Your Profile has been Deleted")
+            localStorage.clear()
+            navigate('/staff/signin')
+        }).catch((error)=>{
+            alert("Remove Failed!");
+        })
+    }
     
     const logout = () => {
         localStorage.clear();
-        navigate(`/staff`)
+        navigate(`/staff/signin`)
     };
         
      const update =() =>{
