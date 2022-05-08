@@ -3,13 +3,13 @@
     "Aspirus",
     "Dehaze",
     "ispassword",
+    "noticeandevent",
     "onclickoutside",
     "phoneno",
     "signin",
     "staffcontroller",
     "staffrouter",
     "staffsignin",
-    "staffsignup",
-    "wipeable"
-  ]
+    "staffsignup"
+  ],
 }

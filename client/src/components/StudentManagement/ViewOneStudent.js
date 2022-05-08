@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import SoloAlert from 'soloalert'
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import axios from 'axios';
-import jspdf from 'jspdf'
-import "jspdf-autotable"
+import jspdf from 'jspdf';
+import "jspdf-autotable";
+//import { format } from "date-fns";
 
 
 export default function ViewOneStudent() {
@@ -41,7 +42,7 @@ export default function ViewOneStudent() {
     useEffect(() => {
         async function getDetails() {
             try {
-                const result = await (await axios.get("http://localhost:8130/student/")).data.data
+                const result = await (await axios.get("http://localhost:8070/studentmanager/")).data.data
                 setAllStudents(result);
                 setLoaderStatus(true)
                 setTableStatus(false)
@@ -54,11 +55,14 @@ export default function ViewOneStudent() {
     })
    
      //This function used to generate a pdf
-     function generatePDF(tickets) {
+     
+     
+   function generatePDF(tickets) {
         const doc = new jspdf();
         const tableColumn = ["title", "fullname", "itnumber","gender","nic","birthday","contactnumber","address","email","batch","password"];
         const tableRows = [];
 
+       
         tickets.slice(0).reverse().map(ticket => {
             const ticketData = [
                 ticket.title,
@@ -90,7 +94,7 @@ export default function ViewOneStudent() {
     useEffect(() => {
         async function getDetails() {
             try {
-                const result = await (await axios.get(`http://localhost:8130/student/${id}`)).data.data
+                const result = await (await axios.get(`http://localhost:8070/studentmanager/${id}`)).data.data
                 settitle(result[0].title);
                 setfullname(result[0].fullname);
                 setitnumber(result[0].itnumber);
@@ -123,7 +127,7 @@ export default function ViewOneStudent() {
             const newDetails = {
                 title,fullname,itnumber,gender,nic,birthday,contactnumber,address,email,batch,password
             }
-            const data = await (await axios.put(`http://localhost:8130/student/${id}`, newDetails)).status
+            const data = await (await axios.put(`http://localhost:8070/studentmanager/${id}`, newDetails)).status
             if (data === 200) {
                 SoloAlert.alert({
                     title: "Welcome!",
@@ -132,7 +136,7 @@ export default function ViewOneStudent() {
                     theme: "dark",
                     useTransparency: true,
                     onOk: function () {
-                        window.location = "/student/view"
+                        window.location = "/studentmanager/view"
                     },
                 });
             } else {
@@ -181,7 +185,7 @@ export default function ViewOneStudent() {
             onOk: async function () {
 
                 try {
-                    const result = await (await axios.delete(`http://localhost:8130/student/${id}`)).status
+                    const result = await (await axios.delete(`http://localhost:8070/studentmanager/${id}`)).status
                     console.log(result)
 
                     if (result === 200) {
@@ -192,7 +196,7 @@ export default function ViewOneStudent() {
                             theme: "dark",
                             useTransparency: true,
                             onOk: function () {
-                                window.location = "/student/view"
+                                window.location = "/studentmanager/view"
                             },
 
                         });
@@ -268,7 +272,7 @@ export default function ViewOneStudent() {
                         </div>
                         <div class="col-md-3 position-relative">
                             <label for="validationTooltip03" class="form-label">BIRTHDAY</label>
-                            <input type="text" class="form-control" id="validationTooltip03" required defaultValue={birthday}
+                            <input type="date" class="form-control" id="validationTooltip03" required defaultValue={birthday}
                                 onChange={(e) => { setbirthday(e.target.value) }} disabled={textState}/>
                         </div>
                         <div class="col-md-3 position-relative">

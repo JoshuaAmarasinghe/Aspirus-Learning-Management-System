@@ -74,10 +74,16 @@ export default function AddNoticeOrEvent() {
 
     }
     return (
-        <div className="content" >
-            <h3 style={{ marginTop:"100px"}}>ADD-EVENTS AND NOTICES-DETAILS</h3><hr />
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >Add Details </h2>
+                    </div>
+                </div>
+            </div>
+           <br></br>
 
-            
             <form class="row g-3 needs-validation" id="inputForm2" novalidate>
 
                 <div class="col-md-3 position-relative">
@@ -123,14 +129,11 @@ export default function AddNoticeOrEvent() {
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { settopic(e.target.value) }} />
                 </div>
-                <div class="col-md-3 position-relative">
+                <div class="col-md-7 position-relative">
                     <label for="validationTooltip03" class="form-label">CONTENT</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setcontent(e.target.value) }} />
                 </div>
-                
-                
-
                 <div class="col-12" style={{ marginTop: "50px", marginLeft: "65%" }}>
                     <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" onClick={(e) => { clear(e) }}><i class="fa fa-ban"></i> Clear form</button>&nbsp;&nbsp;&nbsp;
                     <button type="submit" class="btn btn-primary" onClick={(e) => { submitData(e) }}
