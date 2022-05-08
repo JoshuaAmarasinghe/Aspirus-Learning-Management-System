@@ -1,0 +1,22 @@
+.boxSignUp {
+    width: 80%;
+    padding: 40px;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow:0px 24px 48px 0 rgba(0,0,0,0.1);
+    text-align: left;
+    margin-left: 10%;
+}
+
+
+.previewImg {
+    border-radius: 15px !important;
+    vertical-align: middle;
+    border-style: none;
+    position: relative;
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+td {
+    height: 100px;
+  }

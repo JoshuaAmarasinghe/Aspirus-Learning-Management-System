@@ -1,76 +1,109 @@
 const router = require("express").Router();
 let Content = require("../models/content");
 
-http://Localhost:8070/corse/add
-// add from hear
-router.route("/add").post((req,res)=>{
+
+
+// add from hear http://Localhost:8070/course/add
+router.route("/add/add").post((req,res)=>{
+    const moduleId = req.body.moduleId;
     const title = req.body.title;
-    const disctription = req.body.disctription;
+    const description = req.body.description;
     
+   
 
     const newContent = new Content({
+        moduleId,
         title,
-        disctription
-        
+        description
+      
     })
 
     newContent.save().then(()=>{
-        res.json("Content Added")
+        res.json("Content added")
     }).catch(()=>{
         console.log(err);
     })
 
 })
 
-http://Localhost:8070/corse
 
 
-//details
-
-router.route("/").get((req,res)=>{
-    Content.find().then((contents)=>{
-        res.json(contents)
-    }).catch((err)=>{
-        console.log(err)
-    })
+router.get('/:moduleId', async(req,res)=>{
+    try{
+        let moduleId = req.params.moduleId;
+        const allContent = await Content.find({moduleId:moduleId});
+        res.status(200).send({data : allContent});
+    }catch(err){
+        res.status(500).send({data : err});
+    }
 })
 
+router.get('/', async(req,res)=>{
+    try{
+       
+        const allContent = await Content.find();
+        res.status(200).send({data : allContent});
+    }catch(err){
+        res.status(500).send({data : err});
+    }
+})
 
+//This route used to view specific notice or event from table
+router.get('/view/:id',async(req,res)=>{
+    try{
+        
+        let id = req.params.id;
+        const onecontent = await Content.find({_id : id})
+        res.status(200).send({data : onecontent});
 
-http://Localhost:8070/corse/update/
-
-//update from hear
-
-router.route("/update/:id").put(async (req,res) =>{
-    let contentId = req.params.id;
-    const {title, disctription} = req.body;
-
-    const updateCorse = {
-        title,
-        disctription
+    }catch(err){
+        res.status(500).send({data : err});
     }
 
-    const update = await Content.findByIdAndUpdate(contentId, updateCorse).then(() =>{
-        res.status(200).send({status: "content updated"})
-    }).catch((err) =>{
-        console.log(err);
-        res.status(500).send({status: "error update"});
-    })
+})
+//detailsv   http://Localhost:8070/corse
 
+
+
+//update from hear   http://Localhost:8070/course/update/
+
+//update notice or event
+router.put("/update/:id", async(req,res)=>{
+    try{
+        let _id = req.params.id;
+        const {title, description} = req.body;
+
+
+        const updatecontent = new Content({
+           _id,title, description
+        }); 
+
+        await Content.findByIdAndUpdate(_id,updatecontent)
+        res.status(200).send({data : updatecontent});
+             
+    }catch(err){
+        res.status(500).send({data : err});
+    }
 })
 
 
 //delete from hear
 
-router.route("/delete/:id").delete(async(req,res) =>{
-    let moduleCode = req.params.id;
 
-    await Content.findByIdAndDelete(moduleCode).then(()=>{
-        res.status(200).send({status: "Content deleted"});
-    }).catch((err) =>{
-        console.log(err);
-        res.status(500).send({status: "error delete"});
-    })
+//This route used to delete notice or event from table
+router.delete('/delete/:id',async(req,res)=>{
+
+    try{
+        const id = req.params.id;
+        const removedcontent = await Content.findByIdAndDelete(id)
+        res.status(200).send({status: "content deleted"});
+        //res.status(200).send({data : removedcourse});
+    
+
+    }catch(err){
+        res.status(500).send({data : err});
+    }
+
 })
 
 module.exports = router;

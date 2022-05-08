@@ -10,8 +10,6 @@
     "staffcontroller",
     "staffrouter",
     "staffsignin",
-    "staffsignup",
-    "studentmanager",
-    "wipeable"
-  ]
+    "staffsignup"
+  ],
 }
