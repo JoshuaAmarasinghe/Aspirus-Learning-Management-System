@@ -18,9 +18,19 @@ export default function ViewStudentDetails(){
 
    
     return(
-        <div >
+        <div className="container" >
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >View Student details</h2>
+                    </div>
+                </div>
+            </div>
+            <br></br>
             {Allstudents.map((Student)=>{
                 return(
+                <div className="blue-table ">
+                <div className="blue-table, box-view-student">
                     <table class="table table-dark" key={Student._id}>
                         <thead>
                             <tr>
@@ -35,7 +45,6 @@ export default function ViewStudentDetails(){
                             <th scope="col">ADDRESSES </th>
                             <th scope="col">EMAIL</th>
                             <th scope="col">BATCH</th>
-                            <th scope="col">PASSWORD</th>
                             <th scope="col">ADVANCED </th>
                             
                             </tr>
@@ -53,7 +62,6 @@ export default function ViewStudentDetails(){
                             <td>{Student.address}</td>
                             <td>{Student.email}</td>
                             <td>{Student.batch}</td>
-                            <td>{Student.password}</td>
                             <td> <Link to={"/studentmanager/view/" + Student._id} className="Edit"> EDIT<i className="far fa-edit"></i> </Link></td>
 
                             </tr>
@@ -64,9 +72,10 @@ export default function ViewStudentDetails(){
                         
                     
                      </table>
+                     </div>
+                     </div>
                 )
-            })}
-                        
+            })}              
         </div>
 
     )
