@@ -6,11 +6,18 @@ export default function StudentNAV() {
 
     return (
 
-        <div>
-
+        <div className="container" >
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >Student Management</h2>
+                    </div>
+                </div>
+            </div>
+            <br></br><br></br>
             <div class="sidebar">
-                <Link to="/studentmanager/add"><h1>ADD STUDENT DETAILS</h1></Link>
-                <Link to="/studentmanager/view"><h1>VIEW STUDENT DETAILS</h1></Link>
+                <Link to="/studentmanager/add"><buton type="submit" class="btn btn-primary">ADD STUDENT DETAILS </buton></Link><br></br><br></br>
+                <Link to="/studentmanager/view"><buton type="submit" class="btn btn-secondary">VIEW STUDENT DETAILS</buton></Link>
                 
             </div>
 

@@ -6,11 +6,18 @@ export default function NoticeOrEventNAV() {
 
     return (
 
-        <div>
-
+        <div className="container" >
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >Notice Management</h2>
+                    </div>
+                </div>
+            </div>
+            <br></br><br></br>
             <div class="sidebar">
-                <Link to="/noticeandeventManager/add"><h1>ADD NOTICE OR EVENT</h1></Link><br/>
-                <Link to="/noticeandeventManager/view"><h1>VIEW NOTICES AND EVENTS</h1></Link>
+                <Link to="/noticeandeventManager/add"><button type="submit" class="btn btn-primary">ADD NOTICE OR EVENT</button></Link><br/><br></br>
+                <Link to="/noticeandeventManager/view"><button type="submit" class="btn btn-secondary">VIEW NOTICES AND EVENTS</button></Link>
                 
             </div>
 
