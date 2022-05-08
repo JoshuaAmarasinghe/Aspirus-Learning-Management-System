@@ -2,7 +2,7 @@ const router= require ("express").Router();
 let Student =require("../models/Student");
 
 //.............................
-router.route("/add").post((req,res)=>{
+router.route("/").post((req,res)=>{
 
     const title=req.body.title;
     const fullname=req.body.fullname;
@@ -42,15 +42,15 @@ router.route("/add").post((req,res)=>{
 
 
 //...................................
-/*router.route("/").get((req,res)=>{
+router.route("/").get((req,res)=>{
     Student.find().then((student)=>{
         res.json(student)
     }).catch((err)=>{
         console.log(err)
     })
-    })*/
+    })
 
-    //View all notices and events
+    //View all student
 router.get('/', async(req,res)=>{
     try{
         const allStudent = await Student.find();
@@ -118,7 +118,7 @@ router.get('/', async(req,res)=>{
 
         })
 
-        /*router.route("/get/:id").get(async (req,res) =>{
+        router.route("/get/:id").get(async (req,res) =>{
            let userId=req.params.id;
            await Student.findById(userId) 
            .then(() =>{
@@ -128,7 +128,7 @@ router.get('/', async(req,res)=>{
                    res.status(500).send({status:"error with user"})
                })
            })
-        })*/
+        })
     
 
 module.exports = router;

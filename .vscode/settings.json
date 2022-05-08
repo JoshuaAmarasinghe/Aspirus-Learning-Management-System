@@ -3,6 +3,7 @@
     "Aspirus",
     "Dehaze",
     "ispassword",
+    "noticeandevent",
     "onclickoutside",
     "phoneno",
     "signin",
@@ -10,6 +11,7 @@
     "staffrouter",
     "staffsignin",
     "staffsignup",
+    "studentmanager",
     "wipeable"
   ]
 }

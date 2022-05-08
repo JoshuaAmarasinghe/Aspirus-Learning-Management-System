@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header'
-import Homepage from './components/Home/Homepage';
 import StaffSignUp from './components/StaffManagement/SignUp/SignUp';
 import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
@@ -11,9 +10,14 @@ import ViewNoticesAndEventsDetails from './components/noticeandevent-manager/Vie
 import ViewOneNoticeOrEvent from './components/noticeandevent-manager/ViewOneNoticeOrEvent';
 import AddNoticeOrEvent from './components/noticeandevent-manager/AddNoticeOrEvent';
 import NoticeOrEventNAV from './Routes/NoticeAndEventRoutes';
+import StudentNAV from './Routes/StudentPrivateRoute';
+import AddStudent from './components/StudentManagement/AddStudent';
+import ViewStudentDetails from './components/StudentManagement/ViewAllStudent';
+import ViewOneStudent from './components/StudentManagement/ViewOneStudent';
 import StaffReport from './components/StaffManagement/Report/StaffReport';
 import Staff from './components/StaffManagement/AllStaffs/AllStaffs'
 import Footer from './components/Footer/Footer'
+
 
 function App() {
   return (
@@ -32,9 +36,10 @@ function App() {
               <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
               <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
               <Route exact path = "/noticeandeventManager" element={<NoticeOrEventNAV/>}/>
-              <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
-              <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
-              <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
+              <Route exact path = "/studentmanager" element={<StudentNAV/>}/>
+              <Route exact path = "/studentmanager/add" element={<AddStudent/>}/>
+              <Route exact path = "/studentmanager/view" element={<ViewStudentDetails/>}/>
+              <Route exact path = "/studentmanager/view/:id" element={<ViewOneStudent/>}/>
               <Route exact path="/staff/report/:id" element={<StaffReport/>} />
         </Routes>
         <Footer/>

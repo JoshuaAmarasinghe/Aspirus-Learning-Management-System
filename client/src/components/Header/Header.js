@@ -51,6 +51,13 @@ function Header() {
           cName: 'nav-text'
         },
         {
+            title: 'Students',
+            path: `/studentmanager`,
+            //path: `/events/${user._id}`,
+            icon: <PeopleIcon/>,
+            cName: 'nav-text'
+          },
+        {
             title: 'Staff',
             path: `/staff`,
             icon: <PeopleIcon/>,

@@ -1,18 +1,20 @@
-import { Redirect, Route } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const StudentPrivateRoute = ({component: Component, ...rest}) => {
+export default function StudentNAV() {
+
     return (
-        <Route
-            {...rest}
-            render={(props) => 
-                localStorage.getItem("studentAuthToken") ?(
-                    <Component {...props} />
-                ) : (
-                    <Redirect to="/student/signin" />
-                )
-            }
-        />
-    );
-};
 
-export default StudentPrivateRoute;
+        <div>
+
+            <div class="sidebar">
+                <Link to="/studentmanager/add"><h1>ADD STUDENT DETAILS</h1></Link>
+                <Link to="/studentmanager/view"><h1>VIEW STUDENT DETAILS</h1></Link>
+                
+            </div>
+
+
+        </div>
+    )
+}
