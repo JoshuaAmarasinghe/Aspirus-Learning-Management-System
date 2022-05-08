@@ -11,7 +11,7 @@ import './Content.css';
 
 
 export default function AddContent(){
-    const [moudleId,setModuleId] = useState("");
+    const [moduleId,setModuleId] = useState("");
     const [title,setTitle] = useState("");
     const [description,setDescription] = useState("");
     
@@ -27,14 +27,14 @@ export default function AddContent(){
     function sendData(e){
         e.preventDefault();
         const newContent ={
-            moudleId,
+            moduleId,
             title,
             description,
             //file
             
         }
 
-        axios.post("http://Localhost:8070/content/add",newContent).then(()=>{
+        axios.post("http://Localhost:8070/content/add/add",newContent).then(()=>{
             alert("content added")
             setModuleId("");
             setTitle("");
@@ -42,7 +42,7 @@ export default function AddContent(){
             //setFile("");
             
         }).catch((err)=>{
-            alert(err)
+            alert(err.message)
         })
     }
 
@@ -95,12 +95,12 @@ export default function AddContent(){
                 </div>
                 <br></br>
                 <div className="form-group">
-                <div>
+                {/* <div>
                     <input type="file" id="myFile" name="filename"
                      onChange={(e)=>{
                         //setFile(e.target.value);
                     }}/>
-                </div>
+                </div> */}
                 </div>
                 <br></br>
                 <div className="row">
