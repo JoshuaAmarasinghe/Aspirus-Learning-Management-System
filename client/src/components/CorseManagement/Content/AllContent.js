@@ -83,7 +83,14 @@ export default function AllContent(){
     }, [search, contents])
 
     return (
-        <div class="content">
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >View Content</h2>
+                    </div>
+                </div>
+            </div>
 
             <div class="d-flex justify-content-center" >
                 <div class="spinner-border" role="status" style={{width: "10rem", height: "10rem",  marginTop:"100px"}} hidden={loaderStatus}>
@@ -95,9 +102,8 @@ export default function AllContent(){
 
             <div hidden={tebleStatus}>{/* This part used to get all users data into table */}
                 <nav className="navbar bg-white" >
-                    <div className="container-fluid">
-                        <h3>VIEW CONTENT</h3>
-                        <form className="d-flex"style={{ marginTop:"150px"}}>
+                    <div>
+                        <form className="d-flex"style={{ marginTop:"15px"}}>
                             <input  style={{ marginRight:"300px"}} type="search" placeholder="Search" aria-label="Search"
                                 onChange={e => { setsearch(e.target.value) }} />
                         </form>

@@ -20,7 +20,7 @@ router.route("/add/add").post((req,res)=>{
 
     newContent.save().then(()=>{
         res.json("Content added")
-    }).catch(()=>{
+    }).catch((err)=>{
         console.log(err);
     })
 

@@ -63,12 +63,6 @@ function Header() {
             icon: <PeopleIcon/>,
             cName: 'nav-text'
           },
-        {
-            title: 'Feedback',
-            path: `/staff/review/${user._id}`,
-            icon: <FeedbackIcon />,
-            cName: 'nav-text'
-        }
     ];
 
     useEffect(() => {
