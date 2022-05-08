@@ -80,9 +80,14 @@ export default function AddStudent() {
     }
     return (
         <div className="container" >
-            <h3 style={{ marginTop:"100px"}}>ADD-Students-DETAILS</h3><hr />
-
-            
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >Add Student details</h2>
+                    </div>
+                </div>
+            </div>
+            <br></br>
             <form class="row g-3 needs-validation" id="inputForm2" novalidate>
                  
             <div class="col-md-4 position-relative">
