@@ -33,7 +33,7 @@ function App() {
               <Route exact path="/course/view" element={<AllCourse/>} />
               <Route exact path="/content/view/:moduleId" element={<AllContent/>} />
               <Route exact path="/course/view/:id" element={<ViewOneCourse/>} />
-              <Route exact path="/content/view/:id" element={<ViewOneContent/>} />
+              <Route exact path="/content/view/by/:id" element={<ViewOneContent/>} />
               <Route exact path="/course/views" element={<Allcoursestd/>} />
               <Route exact path="/content/views/:moduleId" element={<AllContentstd/>} />
 

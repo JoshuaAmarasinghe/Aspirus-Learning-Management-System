@@ -4,7 +4,7 @@ let Content = require("../models/content");
 
 
 // add from hear http://Localhost:8070/course/add
-router.route("/add").post((req,res)=>{
+router.route("/add/add").post((req,res)=>{
     const moduleId = req.body.moduleId;
     const title = req.body.title;
     const description = req.body.description;
@@ -28,9 +28,6 @@ router.route("/add").post((req,res)=>{
 
 
 
-
-//detailsv   http://Localhost:8070/corse
-
 router.get('/:moduleId', async(req,res)=>{
     try{
         let moduleId = req.params.moduleId;
@@ -41,9 +38,20 @@ router.get('/:moduleId', async(req,res)=>{
     }
 })
 
-//This route used to view specific notice or event from table
-router.get('/:id',async(req,res)=>{
+router.get('/', async(req,res)=>{
     try{
+       
+        const allContent = await Content.find();
+        res.status(200).send({data : allContent});
+    }catch(err){
+        res.status(500).send({data : err});
+    }
+})
+
+//This route used to view specific notice or event from table
+router.get('/view/:id',async(req,res)=>{
+    try{
+        
         let id = req.params.id;
         const onecontent = await Content.find({_id : id})
         res.status(200).send({data : onecontent});
@@ -53,12 +61,14 @@ router.get('/:id',async(req,res)=>{
     }
 
 })
+//detailsv   http://Localhost:8070/corse
+
 
 
 //update from hear   http://Localhost:8070/course/update/
 
 //update notice or event
-router.put("/:id", async(req,res)=>{
+router.put("/update/:id", async(req,res)=>{
     try{
         let _id = req.params.id;
         const {title, description} = req.body;
@@ -81,7 +91,7 @@ router.put("/:id", async(req,res)=>{
 
 
 //This route used to delete notice or event from table
-router.delete('/:id',async(req,res)=>{
+router.delete('/delete/:id',async(req,res)=>{
 
     try{
         const id = req.params.id;

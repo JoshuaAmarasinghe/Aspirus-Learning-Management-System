@@ -24,12 +24,14 @@ export default function ViewOneContent() {
     
 
     const { id } = useParams();
+    const { moduleId } = useParams();
+    
 
     //This useEffect function used to get all Notices and Events data
     useEffect(() => {
         async function getDetails() {
             try {
-                const result = await (await axios.get(`http://localhost:8070/content/${id}`)).data.data
+                const result = await (await axios.get(`http://localhost:8070/content/view/${id}`)).data.data
                 setTitle(result[0].title);
                 setdescription(result[0].description)
                 
@@ -52,9 +54,9 @@ export default function ViewOneContent() {
         try {
             e.preventDefault();
             const newDetails = {
-                title,description
+               title,description
             }
-            const data = await (await axios.put(`http://localhost:8070/content/${id}`, newDetails)).status
+            const data = await (await axios.put(`http://localhost:8070/content/update/${id}`, newDetails)).status
             if (data === 200) {
                 SoloAlert.alert({
                     title: "Welcome!",
@@ -63,7 +65,7 @@ export default function ViewOneContent() {
                     theme: "dark",
                     useTransparency: true,
                     onOk: function () {
-                        window.location = "/content/view"
+                        
                     },
                 });
             } else {
@@ -112,7 +114,7 @@ export default function ViewOneContent() {
             onOk: async function () {
 
                 try {
-                    const result = (await axios.delete(`http://localhost:8070/content/${id}`)).status
+                    const result = (await axios.delete(`http://localhost:8070/content/delete/${id}`)).status
                     console.log(result)
 
                     if (result === 200) {
@@ -123,7 +125,7 @@ export default function ViewOneContent() {
                             theme: "dark",
                             useTransparency: true,
                             onOk: function () {
-                                window.location = "/content/view"
+                                
                             },
 
                         });

@@ -11,7 +11,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import './Content.css';
 
 
-
+import Content from './Content';
 
 export default function AllContent(){
 
@@ -23,7 +23,7 @@ export default function AllContent(){
 
     const[contents, setContent] = useState([]);
 
-    const [title, setTitle] = useState("");
+    
     const [description, setdescription] = useState("");
 
 
@@ -103,36 +103,34 @@ export default function AllContent(){
                         </form>
                     </div>
                 </nav><hr />
+
+
+
+
+                {filtered.slice(0).map((content, index) => (
+                        
+                      
+                        <><Content title={content.title} description={content.description} id={content._id} moduleId={content.moduleId} /></>
+                        
+                    ))}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
-
                 <div className="bodyContent" align="center">
-                    <table className="table table-light" >
-                        <thead>
-                            <tr >
-                                
-                                <th scope="col">title</th>
-                                <th scope="col">description</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                
-                                   
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            {filtered.slice(0).reverse().map((content) => {
-                                return <tr >
-                                    
-                                    
-                                    <td>{content.title}</td>
-                                    <td>{content.description}</td> 
-                                    <td><Link to={"/content/view/" + content._id} className="Edit"> <i class="bi bi-gear-fill" fontSize="large"></i> </Link></td> 
-                                    
-                                </tr>
-
-                            })}
-                        </tbody>
-                    </table>
+                    
                     <br></br>
                     <div className="row">
                                     
