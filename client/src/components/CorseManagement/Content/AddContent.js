@@ -34,7 +34,7 @@ export default function AddContent(){
             
         }
 
-        axios.post("http://Localhost:8070/content/add",newContent).then(()=>{
+        axios.post("http://Localhost:8070/content/add/add",newContent).then(()=>{
             alert("content added")
             setModuleId("");
             setTitle("");
