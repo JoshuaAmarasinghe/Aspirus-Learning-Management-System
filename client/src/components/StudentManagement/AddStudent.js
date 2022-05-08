@@ -54,7 +54,7 @@ export default function AddStudent() {
                     title,fullname,itnumber,gender,nic,birthday,contactnumber,address,email,batch,password
 
                 }
-                const data = await (await axios.post("http://localhost:8130/student/add", newDetails)).status
+                const data = await (await axios.post("http://localhost:8070/studentmanager/", newDetails)).status
                 if(data === 200){
                     SoloAlert.alert({
                         title: "Welcome!",
@@ -79,68 +79,69 @@ export default function AddStudent() {
 
     }
     return (
-        <div className="content" >
+        <div className="container" >
             <h3 style={{ marginTop:"100px"}}>ADD-Students-DETAILS</h3><hr />
 
             
             <form class="row g-3 needs-validation" id="inputForm2" novalidate>
-
-            <div class="col-md-3 position-relative">
+                 
+            <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">TITLE</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { settitle(e.target.value) }} />
                 </div>
-                <div class="col-md-3 position-relative">
+               
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">FULLNAME</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setfullname(e.target.value) }} />
                 </div>
-                <div class="col-md-6 position-relative">
-                    <label for="validationTooltip01" class="form-label">ITNUMBER</label>
-                    <input type="text" class="form-control" id="validationTooltip01" required
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip02" class="form-label">ITNUMBER</label>
+                    <input type="text" class="form-control" id="validationTooltip02" required
                         onChange={(e) => { setitnumber(e.target.value) }} />
                 </div>
-                <div class="col-md-5 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip02" class="form-label">GENDER</label>
                     <input type="text" class="form-control" id="validationTooltip02" required
                         onChange={(e) => { setgender(e.target.value) }} />
                 </div><br />
-                <div class="col-md-5 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">NIC</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setnic(e.target.value) }} />
                 </div>
                 <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">CONTACTNUMBER</label>
-                    <input type="text" class="form-control" id="validationTooltip03" required
+                    <input type="number" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setcontactnumber(e.target.value) }} />
                 </div>
-                <div class="col-md-3 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">Bithday</label>
-                    <input type="text" class="form-control" id="validationTooltip03" required
+                    <input type="date" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setbirthday(e.target.value) }} />
                 </div>
-                <div class="col-md-3 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">ADDRESS</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setaddress(e.target.value) }} />
                 </div>
 
-                <div class="col-md-3 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">EMAIL</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setemail(e.target.value) }} />
                 </div>
 
 
-                <div class="col-md-3 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">BATCH</label>
                     <input type="text" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setbatch(e.target.value) }} />
                 </div>
 
 
-                <div class="col-md-3 position-relative">
+                <div class="col-md-4 position-relative">
                     <label for="validationTooltip03" class="form-label">PASSWORD</label>
                     <input type="password" class="form-control" id="validationTooltip03" required
                         onChange={(e) => { setpassword(e.target.value) }} />

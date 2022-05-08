@@ -11,6 +11,10 @@ import ViewNoticesAndEventsDetails from './components/noticeandevent-manager/Vie
 import ViewOneNoticeOrEvent from './components/noticeandevent-manager/ViewOneNoticeOrEvent';
 import AddNoticeOrEvent from './components/noticeandevent-manager/AddNoticeOrEvent';
 import NoticeOrEventNAV from './Routes/NoticeAndEventRoutes';
+import StudentNAV from './Routes/StudentPrivateRoute';
+import AddStudent from './components/StudentManagement/AddStudent';
+import ViewStudentDetails from './components/StudentManagement/ViewAllStudent';
+import ViewOneStudent from './components/StudentManagement/ViewOneStudent';
 
 function App() {
   return (
@@ -29,9 +33,12 @@ function App() {
               <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
               <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
               <Route exact path = "/noticeandeventManager" element={<NoticeOrEventNAV/>}/>
-              <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
-              <Route exact path = "/noticeandeventManager/view" element={<ViewNoticesAndEventsDetails/>}/>
-              <Route exact path = "/noticeandeventManager/view/:id" element={<ViewOneNoticeOrEvent/>}/>
+
+              {/*Student Routes*/}
+              <Route exact path = "/studentmanager" element={<StudentNAV/>}/>
+              <Route exact path = "/studentmanager/add" element={<AddStudent/>}/>
+              <Route exact path = "/studentmanager/view" element={<ViewStudentDetails/>}/>
+              <Route exact path = "/studentmanager/view/:id" element={<ViewOneStudent/>}/>
         </Routes>
        </div>
     </Router>
