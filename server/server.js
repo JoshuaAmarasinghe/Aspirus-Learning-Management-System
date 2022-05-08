@@ -28,13 +28,14 @@ connection.once("open", function () {
 
 //when http://localhost:8070/staff run it will execute staffrouter.js file
 app.use("/staff", StaffRouter);
-// Apoinment manager routes 
+// Appointment manager routes 
 app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
 //Student Managment Routes
 app.use("/student", studentRouter);
 //use courses.js file created in routes folder pass data frontend to backend
 app.use("/course", require("./routes/courses"));
 app.use("/content", require("./routes/contents"));
+app.use("/studentmanager", require("./routes/students"));
 
 //defining a port to run the application
 //use port 8070 or use any other port if the 8070 is unavailable 

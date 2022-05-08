@@ -2,7 +2,7 @@ const router= require ("express").Router();
 let Student =require("../models/Student");
 
 //.............................
-router.route("/add").post((req,res)=>{
+router.route("/").post((req,res)=>{
 
     const title=req.body.title;
     const fullname=req.body.fullname;
@@ -10,7 +10,7 @@ router.route("/add").post((req,res)=>{
     const gender=req.body.gender;
     const nic=req.body.nic;
     const birthday=req.body.birthday;
-    const contactnumber=Number(req.body.contactnumber);
+    const contactnumber=req.body.contactnumber;
     const  address=req.body.address;
     const email=req.body.email;
     const batch=req.body.batch;
@@ -42,7 +42,7 @@ router.route("/add").post((req,res)=>{
 
 
 //...................................
-router.route("/view").get((req,res)=>{
+router.route("/").get((req,res)=>{
     Student.find().then((student)=>{
         res.json(student)
     }).catch((err)=>{
@@ -50,8 +50,18 @@ router.route("/view").get((req,res)=>{
     })
     })
 
+    //View all student
+router.get('/', async(req,res)=>{
+    try{
+        const allStudent = await Student.find();
+        res.status(200).send({data : allStudent});
+    }catch(err){
+        res.status(500).send({data : err});
+    }
+})
+
     //..............................................
-    router.route("/update/:id").put(async (req,res) =>{
+    router.route("/:id").put(async (req,res) =>{
        let userId=req.params.id;
        //distructure
        const {title,fullname,itnumber,gender,nic,birthday,contactnumber,address,email,batch,password}=req.body;
@@ -82,7 +92,7 @@ router.route("/view").get((req,res)=>{
     })
 
     //............................
-    router.route("/delete/:id").delete(async(req,res) =>{
+    router.route("/:id").delete(async(req,res) =>{
          let userId=req.params.id;
 
          await Student.findByIdAndDelete(userId).then(()=>
@@ -94,7 +104,21 @@ router.route("/view").get((req,res)=>{
         })
         })
 
-        router.route("/get:id").get(async (req,res) =>{
+
+        //This route used to view specific notice or event from table
+        router.get('/:id',async(req,res)=>{
+            try{
+                let id = req.params.id;
+                const student = await Student.find({_id : id})
+                res.status(200).send({data : student});
+
+            }catch(err){
+                res.status(500).send({data : err});
+            }
+
+        })
+
+        router.route("/get/:id").get(async (req,res) =>{
            let userId=req.params.id;
            await Student.findById(userId) 
            .then(() =>{
