@@ -220,8 +220,15 @@ export default function ViewOneNoticeOrEvent() {
     }
    
     return (
-        <div class="content">
-
+        <div className="container" >
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >Content Details</h2>
+                    </div>
+                </div>
+            </div>
+            <br></br>
             <div class="d-flex justify-content-center" >
                 <div class="spinner-border" role="status" style={{ width: "10rem", height: "10rem" }} hidden={loaderStatus}>
                     <span class="visually-hidden">Loading...</span>
@@ -230,8 +237,6 @@ export default function ViewOneNoticeOrEvent() {
 
 
             <div hidden={tebleStatus}>
-                <h3 style={{ marginTop:"100px"}}>CONTENT-DETAILS</h3><hr />
-
                 <button type="button" class="btn btn-outline-info" id="pdfButton" onClick={(e) => { generatePDF(AllNoticesAndEvents) }}>
                     <i className="fa fa-file-pdf"></i>  PDF</button>
                 
@@ -239,7 +244,7 @@ export default function ViewOneNoticeOrEvent() {
 
                         <div class="col-md-6 position-relative">
                             <label for="validationTooltip01" class="form-label">DATE</label>
-                            <input1 type="date" class="form-control" id="validationTooltip01" required defaultValue={date}
+                            <input type="date" class="form-control" id="validationTooltip01" required defaultValue={date}
                                 onChange={(e) => { setdate(e.target.value) }} disabled={textState}/>
                         </div>
                         <div class="col-md-5 position-relative">
@@ -266,14 +271,14 @@ export default function ViewOneNoticeOrEvent() {
                             <label for="validationTooltip03" class="form-label">CATEGORY</label>
                         </div>
                         <div class="col-md-4 position-relative">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Notice" required
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Notice" required defaultValue={category}
                                     onChange={(e) => { setcategory(e.target.value) }} />
-                            <label class="form-check-label" for="flexRadioDefault1"  > Notice </label>
+                            <label class="form-check-label" for="flexRadioDefault1" > Notice </label>
                         </div>
                         <div class="col-md-4 position-relative">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Event" required
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Event" required defaultValue={category}
                                     onChange={(e) => { setcategory(e.target.value) }} />
-                            <label class="form-check-label" for="flexRadioDefault2"  >Event </label>
+                            <label class="form-check-label" for="flexRadioDefault2" >Event </label>
                         </div>
                         <div class="col-md-3 position-relative">
                             <label for="validationTooltip03" class="form-label">TOPIC</label>
