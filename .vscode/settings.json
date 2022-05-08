@@ -3,6 +3,7 @@
     "Aspirus",
     "Dehaze",
     "ispassword",
+    "noticeandevent",
     "onclickoutside",
     "phoneno",
     "signin",
@@ -11,5 +12,4 @@
     "staffsignin",
     "staffsignup"
   ],
-  "npm-scripts.showStartNotification": false
 }

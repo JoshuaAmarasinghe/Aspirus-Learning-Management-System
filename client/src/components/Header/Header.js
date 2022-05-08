@@ -13,7 +13,6 @@ import Avatar from '@material-ui/core/Avatar';
 import onClickOutside from "react-onclickoutside";
 import { blue } from '@material-ui/core/colors';
 import { Button } from '@material-ui/core';
-//import axios from 'axios';
 import './Header.css';
 import './Sidebar.css';
 
@@ -28,7 +27,7 @@ function Header() {
     const SidebarItem = [
         {
           title: 'Aspirus LMS',
-          path: '/',
+          path: '/staff',
           icon: <HomeIcon/>,
           cName: 'nav-text'
         },
@@ -46,13 +45,21 @@ function Header() {
         },
         {
           title: 'Events',
-          path: `/events/${user._id}`,
+          path: `/noticeandeventManager`,
+          //path: `/events/${user._id}`,
           icon: <EventAvailableIcon/>,
           cName: 'nav-text'
         },
         {
+            title: 'Students',
+            path: `/studentmanager`,
+            //path: `/events/${user._id}`,
+            icon: <PeopleIcon/>,
+            cName: 'nav-text'
+          },
+        {
             title: 'Staff',
-            path: `/staff/${user._id}`,
+            path: `/staff`,
             icon: <PeopleIcon/>,
             cName: 'nav-text'
           },
@@ -101,7 +108,7 @@ function Header() {
     //logout
     async function logout(){
         localStorage.clear();
-        navigate('/')
+        navigate('/staff/signin')
     }
 
     const showSidebar = () => setSidebar(!sidebar);
@@ -109,7 +116,7 @@ function Header() {
     Header.handleClickOutside = () => setSidebar(false);
 
     function home(){
-        navigate('/')
+        navigate('/staff/signin')
     }
     
     return (
@@ -125,7 +132,7 @@ function Header() {
                             }      
                         </ul>
                         <div className="header-title">
-                            <h3 onClick={home}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learning &nbsp; Management &nbsp; System</h3>
+                            <h3 onClick={home}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learning &nbsp; Management &nbsp; System</h3>
                         </div>
                         <ul className="mx-3">
                             {isSignedIn ?
@@ -150,7 +157,7 @@ function Header() {
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>
                         <li className='mb-4 mt-3' align="center">
-                            <img src="/images/Logo.png" width="150px" alt="logo"/>
+                            <img src="/images/logo.png" width="90px" alt="logo"/>
                         </li>
                         {SidebarItem.map((item, index) => {
                         return (

@@ -6,7 +6,7 @@ import UpdateIcon from '@material-ui/icons/Update';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { green,blue} from '@material-ui/core/colors';
+import { green,blue, red} from '@material-ui/core/colors';
 import './Profile.css';
 
 function Profile() {
@@ -17,8 +17,7 @@ function Profile() {
     useEffect(() => {
          async function fetchUser(){
               await axios.get(`http://localhost:8070/staff/${staff._id}`).then((res)=>{
-                    localStorage.setItem('user',JSON.stringify(res.data.result))
-                    console.log(res.data)  
+                    localStorage.setItem('user',JSON.stringify(res.data.result)) 
                     setStaff(JSON.parse(localStorage.getItem('user')))
                 }).catch((error)=>{
                     alert("Failed to fetch item data")
@@ -28,25 +27,25 @@ function Profile() {
      
     },[staff._id,location])
 
-        async function deleteStaff(id){
-            const config={
-                headers:{
-                    "content-Type":"application/json"
-                }
+    async function deleteStaff(id){
+        const config={
+            headers:{
+                "content-Type":"application/json"
             }
-
-            await axios.delete(`http://localhost:8070/staff/delete/${id}`,config).then(() =>{
-                alert("Your Profile has been Deleted")
-                localStorage.clear()
-                navigate('/staff/signin')
-            }).catch((error)=>{
-                alert("Remove Failed!");
-            })
         }
+
+        await axios.delete(`http://localhost:8070/staff/delete/${id}`,config).then(() =>{
+            alert("Your Profile has been Deleted")
+            localStorage.clear()
+            navigate('/staff/signin')
+        }).catch((error)=>{
+            alert("Remove Failed!");
+        })
+    }
     
     const logout = () => {
         localStorage.clear();
-        navigate(`/`)
+        navigate(`/staff/signin`)
     };
         
      const update =() =>{
@@ -81,14 +80,43 @@ function Profile() {
                         </div>
                         <div className="col-xl-4">
                             <h4>{staff.title} {staff.name}</h4>
-                            <h5>{staff.qualification}</h5>
-                            <h5>{staff.nic}</h5>
                             <h5><VerifiedUserIcon style={{ color: blue[700] }}/> {staff.role}</h5>
                         </div>
-                        <div className="col-xl-5">
-                            
-                        </div>              
-                    </div>    
+                        <div className="row mt-5">
+                            <h4>User details</h4>
+                            <hr></hr>
+                            <div className="col-xl-4">
+                                <h5>Address</h5>
+                                <h6>{staff.address}</h6>
+                            </div>
+                            <div className="col-xl-4">
+                                <h5>Email</h5>
+                                <h6>{staff.email}</h6>
+                            </div>
+                            <div className="col-xl-4">
+                                <h5>Qualifications</h5>
+                                <h6>{staff.qualification}</h6>
+                            </div>
+                        </div>
+                        <div className="row mt-2">
+                            <div className="col-xl-4">
+                                <h6>Gender</h6>
+                                <h7>{staff.gender}</h7>
+                            </div>
+                            <div className="col-xl-4">
+                                <h6>Age</h6>
+                                <h7>{staff.age}</h7>
+                            </div>
+                        </div>
+                        <div className="row mt-5">
+                            <h4>Enrolled Course</h4>
+                            <hr></hr>
+                            <div className="col-xl-4">
+                                <h6>N/A</h6>
+                            </div>
+                        </div>
+
+                    </div>   
                 </div>
                 <div className="col-xl-3 px-5" align="center">                   
                     <Button
@@ -112,7 +140,7 @@ function Profile() {
                         onClick={report}
                         fullWidth
                     >
-                        Download
+                        Generate Report
                     </Button>
                     <br/>
                     <Button
@@ -120,6 +148,7 @@ function Profile() {
                         variant="contained"
                         color="secondary"
                         endIcon={<DeleteIcon />}
+                        style={{ backgroundColor: red[700], color: 'white'}}
                         fullWidth
                         disableElevation
                         onClick={() => deleteStaff(staff._id)} 
