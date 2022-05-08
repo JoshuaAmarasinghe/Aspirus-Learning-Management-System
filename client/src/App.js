@@ -12,6 +12,8 @@ import AllContent from './components/CorseManagement/Content/AllContent';
 import AddContent from './components/CorseManagement/Content/AddContent';
 import ViewOneCourse from './components/CorseManagement/Course/viewOneCourse';
 import ViewOneContent from './components/CorseManagement/Content/viewOneContent';
+import Allcoursestd from './components/CorseManagement/Course/Allcoursestd';
+import AllContentstd from './components/CorseManagement/Content/AllContentstd';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
               <Route exact path="/content/view/:moduleId" element={<AllContent/>} />
               <Route exact path="/course/view/:id" element={<ViewOneCourse/>} />
               <Route exact path="/content/view/:id" element={<ViewOneContent/>} />
+              <Route exact path="/course/views" element={<Allcoursestd/>} />
+              <Route exact path="/content/views/:moduleId" element={<AllContentstd/>} />
 
         </Routes>
         

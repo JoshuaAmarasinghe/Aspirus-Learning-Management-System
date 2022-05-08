@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import './cards.css';
 
+
 const Course = ({id,moduleId,name,description,image}) => {
   return (
     <div class="main">
@@ -29,8 +30,8 @@ const Course = ({id,moduleId,name,description,image}) => {
             </CardContent>
             <CardActions>
                 
-            <Button><Link to={"/course/view/" + id} className="Edit"> <i class="bi bi-gear-fill" fontSize="large"></i> </Link></Button>
-            <Button size="small"><Link to={"/content/view/" + moduleId} className="Edit"> Learn More </Link></Button>
+           
+            <Button size="small"><Link to={"/content/views/" + moduleId} className="Edit"> Learn More </Link></Button>
             </CardActions>
         </Card>
     </div>

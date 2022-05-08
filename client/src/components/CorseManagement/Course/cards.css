@@ -1,0 +1,7 @@
+.main{
+    display: inline-block;
+    width: 20%;
+    border-radius: 5px;
+    margin: 40px;
+    box-shadow: 2px 2px 10px rgb(105, 100, 100);
+}

@@ -169,7 +169,7 @@ export default function ViewOneContent() {
 
 
             <div hidden={tebleStatus}>
-                <h3 style={{ marginTop:"100px"}}>COURSE-DETAILS</h3><hr />
+                <h3 style={{ marginTop:"100px"}}>CONTENT-DETAILS</h3><hr />
                     <form class="row g-3 needs-validation" id="inputForm2" noValidate>
 
                         <div class="col-md-6 position-relative">

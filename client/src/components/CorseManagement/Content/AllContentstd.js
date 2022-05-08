@@ -13,7 +13,7 @@ import './Content.css';
 
 
 
-export default function AllContent(){
+export default function AllContentstd(){
 
     const [loaderStatus, setLoaderStatus] = useState(false);
     const [tebleStatus, setTableStatus] = useState(true);
@@ -90,9 +90,7 @@ export default function AllContent(){
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
-            <button type="button" class="btn btn-outline-info" id="pdfButton" onClick={(e) => { generatePDF(contents) }}>
-                <i className="fa fa-file-pdf"></i>  PDF</button>
-
+            
             <div hidden={tebleStatus}>{/* This part used to get all users data into table */}
                 <nav className="navbar bg-white" >
                     <div className="container-fluid">
@@ -126,7 +124,7 @@ export default function AllContent(){
                                     
                                     <td>{content.title}</td>
                                     <td>{content.description}</td> 
-                                    <td><Link to={"/content/view/" + content._id} className="Edit"> <i class="bi bi-gear-fill" fontSize="large"></i> </Link></td> 
+                                    
                                     
                                 </tr>
 
@@ -134,15 +132,7 @@ export default function AllContent(){
                         </tbody>
                     </table>
                     <br></br>
-                    <div className="row">
-                                    
-                        <div className="form-group">
-                            <Link to={"/content/add"} className="add"> <input className="form-submit-btn" type="submit" value="Add" /> </Link>
-                            
-                        </div>
-                                
-                    </div>
-
+                    
                 </div>
 
             </div>{/* End of the */}
