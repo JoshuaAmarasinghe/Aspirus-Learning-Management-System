@@ -47,7 +47,14 @@ export default function ViewNoticesAndEventsDetails() {
 
 
     return (
-        <div class="content">
+        <div className="container" >
+            <div className="row">
+                <div className="col-12">
+                    <div className="pb-2 px-3">
+                        <h2 >View Notice and Events</h2>
+                    </div>
+                </div>
+            </div>
 
             <div class="d-flex justify-content-center" >
                 <div class="spinner-border" role="status" style={{width: "10rem", height: "10rem",  marginTop:"100px"}} hidden={loaderStatus}>
@@ -57,10 +64,9 @@ export default function ViewNoticesAndEventsDetails() {
 
             <div hidden={tebleStatus}>{/* This part used to get all users data into table */}
                 <nav className="navbar bg-white" >
-                    <div className="container-fluid">
-                        <h3>VIEW NOIICES AND EVENTS</h3>
-                        <form className="d-flex"style={{ marginTop:"150px"}}>
-                            <input  style={{ marginRight:"300px"}} type="search" placeholder="Search" aria-label="Search"
+                    <div >
+                        <form className="d-flex"style={{ marginTop:"15px"}}>
+                            <input  style={{ marginRight:"300px"}} type="search" placeholder="Search" aria-label="Search" 
                                 onChange={e => { setsearch(e.target.value) }} />
                         </form>
                     </div>
@@ -73,7 +79,8 @@ export default function ViewNoticesAndEventsDetails() {
                                 <th scope="col">DATE</th>
                                 <th scope="col">TIME</th>
                                 <th scope="col">CATEGORY</th>
-                                <th scope="col">TPOIC</th>
+                                <th scope="col">TOPIC</th>
+                                <th scope="col">ADVANCED</th>
         
                                        
                             </tr>

@@ -39,7 +39,7 @@ function Header() {
         },
         {
             title: 'Courses',
-            path: `/courses/${user._id}`,
+            path: `/course/view`,
             icon: <AssignmentIcon/>,
             cName: 'nav-text'
         },
@@ -51,17 +51,18 @@ function Header() {
           cName: 'nav-text'
         },
         {
+            title: 'Students',
+            path: `/studentmanager`,
+            //path: `/events/${user._id}`,
+            icon: <PeopleIcon/>,
+            cName: 'nav-text'
+          },
+        {
             title: 'Staff',
             path: `/staff`,
             icon: <PeopleIcon/>,
             cName: 'nav-text'
           },
-        {
-            title: 'Feedback',
-            path: `/staff/review/${user._id}`,
-            icon: <FeedbackIcon />,
-            cName: 'nav-text'
-        }
     ];
 
     useEffect(() => {
