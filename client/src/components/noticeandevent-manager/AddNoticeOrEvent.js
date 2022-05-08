@@ -83,6 +83,7 @@ export default function AddNoticeOrEvent() {
                 </div>
             </div>
            <br></br>
+
             <form class="row g-3 needs-validation" id="inputForm2" novalidate>
 
                 <div class="col-md-3 position-relative">
