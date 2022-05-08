@@ -13,7 +13,6 @@ import Avatar from '@material-ui/core/Avatar';
 import onClickOutside from "react-onclickoutside";
 import { blue } from '@material-ui/core/colors';
 import { Button } from '@material-ui/core';
-//import axios from 'axios';
 import './Header.css';
 import './Sidebar.css';
 
@@ -53,7 +52,7 @@ function Header() {
         },
         {
             title: 'Staff',
-            path: `/staff/${user._id}`,
+            path: `/staff`,
             icon: <PeopleIcon/>,
             cName: 'nav-text'
           },
@@ -126,7 +125,7 @@ function Header() {
                             }      
                         </ul>
                         <div className="header-title">
-                            <h3 onClick={home}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learning &nbsp; Management &nbsp; System</h3>
+                            <h3 onClick={home}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Learning &nbsp; Management &nbsp; System</h3>
                         </div>
                         <ul className="mx-3">
                             {isSignedIn ?
@@ -151,7 +150,7 @@ function Header() {
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>
                         <li className='mb-4 mt-3' align="center">
-                            <img src="/images/Logo.png" width="150px" alt="logo"/>
+                            <img src="/images/logo.png" width="90px" alt="logo"/>
                         </li>
                         {SidebarItem.map((item, index) => {
                         return (

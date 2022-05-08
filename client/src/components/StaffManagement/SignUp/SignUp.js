@@ -96,7 +96,7 @@ function SignUp() {
                     alert("Registration Successful")
                     navigate('/staff/signin')
             } catch (error) {
-                    alert("User Registration failed")
+                    alert("Please check the details you entered")
             }
         }else{
             alert("Passwords don't match");

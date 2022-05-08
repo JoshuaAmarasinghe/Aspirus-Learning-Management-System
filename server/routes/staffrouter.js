@@ -14,7 +14,7 @@ router.put('/update/:id', updateStaff);
 router.get('/:id', fetchOne);
 
 //Find all staff members
-router.get('/', fetchAll);
+router.post('/', fetchAll);
 
 //Delete staff members
 router.delete('/delete/:id', deleteStaff);
