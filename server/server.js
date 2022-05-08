@@ -28,7 +28,7 @@ connection.once("open", function () {
 
 //when http://localhost:8070/staff run it will execute staffrouter.js file
 app.use("/staff", StaffRouter);
-// Apoinment manager routes 
+// Appointment manager routes 
 app.use("/noticeandeventManager", require("./routes/NoticesAndEventsRoute"));
 //Student Managment Routes
 app.use("/studentmanager", require("./routes/students"));

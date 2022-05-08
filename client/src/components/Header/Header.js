@@ -27,7 +27,7 @@ function Header() {
     const SidebarItem = [
         {
           title: 'Aspirus LMS',
-          path: '/',
+          path: '/staff',
           icon: <HomeIcon/>,
           cName: 'nav-text'
         },
@@ -108,7 +108,7 @@ function Header() {
     //logout
     async function logout(){
         localStorage.clear();
-        navigate('/')
+        navigate('/staff/signin')
     }
 
     const showSidebar = () => setSidebar(!sidebar);
@@ -116,7 +116,7 @@ function Header() {
     Header.handleClickOutside = () => setSidebar(false);
 
     function home(){
-        navigate('/')
+        navigate('/staff/signin')
     }
     
     return (
