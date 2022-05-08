@@ -1,9 +1,19 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header'
 import StaffSignUp from './components/StaffManagement/SignUp/SignUp';
 import StaffSignIn from './components/StaffManagement/SignIn/SignIn';
 import Profile from './components/StaffManagement/Profile/Profile';
+
+import AddCourse from './components/CorseManagement/Course/AddCourse';
+import AllCourse from './components/CorseManagement/Course/AllCourse';
+import AllContent from './components/CorseManagement/Content/AllContent';
+import AddContent from './components/CorseManagement/Content/AddContent';
+import ViewOneCourse from './components/CorseManagement/Course/viewOneCourse';
+import ViewOneContent from './components/CorseManagement/Content/viewOneContent';
+import Allcoursestd from './components/CorseManagement/Course/Allcoursestd';
+import AllContentstd from './components/CorseManagement/Content/AllContentstd';
 import UpdateProfile from './components/StaffManagement/UpdateProfile/UpdateProfile';
 import AllStaffs from './components/StaffManagement/AllStaffs/AllStaffs';
 import ViewNoticesAndEventsDetails from './components/noticeandevent-manager/ViewAllNoticesAndEvents';
@@ -30,6 +40,14 @@ function App() {
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/signin" element={<StaffSignIn/>} />
               <Route exact path="/staff/profile" element={<Profile/>} />
+              <Route exact path="/course/add" element={<AddCourse/>} />
+              <Route exact path="/content/add" element={<AddContent/>} />
+              <Route exact path="/course/view" element={<AllCourse/>} />
+              <Route exact path="/content/view/:moduleId" element={<AllContent/>} />
+              <Route exact path="/course/view/:id" element={<ViewOneCourse/>} />
+              <Route exact path="/content/view/by/:id" element={<ViewOneContent/>} />
+              <Route exact path="/course/views" element={<Allcoursestd/>} />
+              <Route exact path="/content/views/:moduleId" element={<AllContentstd/>} />
               <Route exact path="/staff/update/:id" element={<UpdateProfile/>} />
               <Route exact path="/staff" element={<AllStaffs/>} />
               <Route exact path = "/noticeandeventManager/add" element={<AddNoticeOrEvent/>}/>
