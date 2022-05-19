@@ -11,6 +11,7 @@
     "staffrouter",
     "staffsignin",
     "staffsignup",
-    "Staff"
+    "Staff",
+    "Log"
   ],
 }
